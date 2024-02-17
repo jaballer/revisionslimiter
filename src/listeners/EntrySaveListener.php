@@ -1,32 +1,15 @@
 <?php
-
 namespace jaballer\revisionslimiter\listeners;
 
 use Craft;
-use craft\base\Element;
-use craft\elements\Entry;
+use craft\events\ElementEvent;
 use yii\base\Event;
 
 class EntrySaveListener
 {
-    public function handle(Event $event)
+    public static function handleBeforeSaveElement(ElementEvent $event)
     {
-        /** @var Entry $entry */
-        $entry = $event->sender;
-
-        // Define the maximum number of revisions to keep
-        $maxRevisions = 10;
-
-        // Get the number of revisions for the entry
-        $revisionCount = count($entry->getRevisions());
-
-        // If the number of revisions exceeds the limit, delete the oldest revisions
-        if ($revisionCount > $maxRevisions) {
-            $revisionsToDelete = array_slice($entry->getRevisions(), 0, $revisionCount - $maxRevisions);
-
-            foreach ($revisionsToDelete as $revision) {
-                Craft::$app->elements->deleteElement($revision);
-            }
-        }
+        // Your logic to limit revisions goes here
+        // For example, you can check the number of existing revisions and delete old ones if the limit is reached
     }
 }
