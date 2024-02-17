@@ -1,0 +1,12 @@
+{
+  "name": "jaballer/revisionslimiter",
+  "type": "craft-plugin",
+  "autoload": {
+    "psr-4": {
+      "jaballer\\revisionslimiter\\": "src/"
+    }
+  },
+  "require": {
+    "craftcms/cms": "^3.0.0"
+  }
+}
