@@ -1,12 +1,13 @@
 {
   "name": "jaballer/revisionslimiter",
+  "description": "A Craft CMS plugin to limit the number of revisions per element.",
   "type": "craft-plugin",
+  "require": {
+    "craftcms/cms": "^4.0"
+  },
   "autoload": {
     "psr-4": {
       "jaballer\\revisionslimiter\\": "src/"
     }
-  },
-  "require": {
-    "craftcms/cms": "^4.0.0"
   }
 }

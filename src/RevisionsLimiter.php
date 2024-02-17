@@ -1,8 +1,9 @@
 <?php
-
 namespace jaballer\revisionslimiter;
 
+use Craft;
 use craft\base\Plugin;
+use jaballer\revisionslimiter\listeners\EntrySaveListener;
 
 class RevisionsLimiter extends Plugin
 {
@@ -11,8 +12,10 @@ class RevisionsLimiter extends Plugin
         parent::init();
 
         // Register event listener
-        $this->setComponents([
-            'entrySaveListener' => \jaballer\revisionslimiter\listeners\EntrySaveListener::class,
-        ]);
+        Craft::$app->getEventManager()->on(
+            \craft\services\Elements::class,
+            \craft\services\Elements::EVENT_BEFORE_SAVE_ELEMENT,
+            [EntrySaveListener::class, 'handleBeforeSaveElement']
+        );
     }
 }
