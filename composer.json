@@ -1,5 +1,5 @@
 {
-  "name": "jaballer/revisions-limiter",
+  "name": "jaballer/revisionslimiter",
   "description": "Craft CMS plugin to limit the number of post revisions.",
   "type": "craft-plugin",
   "require": {
