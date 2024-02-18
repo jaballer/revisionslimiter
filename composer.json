@@ -3,11 +3,12 @@
   "description": "Craft CMS plugin to limit the number of post revisions.",
   "type": "craft-plugin",
   "require": {
-      "craftcms/cms": "^4.0"
+    "craftcms/cms": "^4.7.3"
   },
   "autoload": {
-      "psr-4": {
-          "jaballer\\revisionslimiter\\": "src/"
-      }
-  }
+    "psr-4": {
+      "jaballer\\revisionslimiter\\": "src/"
+    }
+  },
+  "license": "MIT"
 }
